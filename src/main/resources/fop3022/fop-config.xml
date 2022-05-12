@@ -1,0 +1,50 @@
+<fop version="1.0">
+
+  <!-- https://xmlgraphics.apache.org/fop/2.5/configuration.html -->
+
+  <!-- Strict user configuration -->
+  <strict-configuration>true</strict-configuration>
+
+  <!-- Strict FO validation -->
+  <strict-validation>true</strict-validation>
+
+  <!-- Base URL for resolving relative URLs -->
+  <base>./</base>
+
+  <!-- Font Base URL for resolving relative font URLs -->
+  <font-base>./fonts</font-base>
+
+  <!-- Source resolution in dpi (dots/pixels per inch) for determining the size of pixels in SVG and bitmap images, default: 72dpi -->
+  <source-resolution>72</source-resolution>
+  
+  <!-- Target resolution in dpi (dots/pixels per inch) for specifying the target resolution for generated bitmaps, default: 72dpi -->
+  <target-resolution>72</target-resolution>
+
+  <!-- default page-height and page-width, in case value is specified as auto -->
+  <default-page-settings height="29.7cm" width="21.0cm"/> <!-- DIN A4 -->
+
+  <!-- Use file name nl_Bel instead of the default nl_BE -->
+  <hyphenation-pattern lang="de" country="DE">de_DE</hyphenation-pattern>
+
+  <renderers>
+
+    <renderer mime="application/pdf">
+    
+      <!-- @see [11-AUG-2020:KASI]   https://xmlgraphics.apache.org/fop/2.3/pdfa.html -->
+      <pdf-a-mode>PDF/A-3</pdf-a-mode>
+      <version>1.7</version>
+    
+      <fonts>
+        <auto-detect/>
+        <!-- 
+        <font metrics-url="arial.xml" kerning="yes" embed-url="arial.ttf"> 
+          <font-triplet name="Arial" style="normal" weight="normal"/>
+          <font-triplet name="ArialMT" style="normal" weight="normal"/>
+        </font>
+         -->
+      </fonts>
+    </renderer>
+    
+  </renderers>
+  
+</fop>

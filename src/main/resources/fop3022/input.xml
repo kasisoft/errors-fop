@@ -1,0 +1,23 @@
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format" font-size="10pt" font-family="Liberation Serif, Calibri, Arial, Helvetica">
+
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="master">
+      <fo:region-body/>
+    </fo:simple-page-master>    
+  </fo:layout-master-set>      
+
+  <fo:page-sequence master-reference="master">  
+
+    <fo:flow flow-name="xsl-region-body">
+     
+     <fo:block border-bottom="0.1mm solid black">
+       <!-- the property will be replaced by the main class --> 
+       <fo:external-graphic src="url('${file}')"/>
+     </fo:block>
+
+    </fo:flow>
+    
+  </fo:page-sequence>
+  
+</fo:root>
+
